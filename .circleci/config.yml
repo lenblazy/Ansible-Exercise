@@ -24,15 +24,15 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-        fingerprints: ["87:02:58:fb:1f:fa:de:2c:e6:2f:47:e1:f4:94:db:06"] 
+          fingerprints: ["87:02:58:fb:1f:fa:de:2c:e6:2f:47:e1:f4:94:db:06"] 
       - run:
-        name: Install Ansible
-        command: |
-          apk add --update ansible
+          name: Install Ansible
+          command: |
+            apk add --update ansible
       - run:
-        name: Run Playbook and Configure server
-        command: |
-          ansible-playbook -i inventory main-remote.yml
+          name: Run Playbook and Configure server
+          command: |
+            ansible-playbook -i inventory main-remote.yml
 
   # smoke_test:
   #   docker:
